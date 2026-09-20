@@ -1,33 +1,63 @@
-import Link from "next/link";
-import { ROUTES } from "@/app/routes";
+import { FaGraduationCap, FaServer, FaTools } from "react-icons/fa";
 
-const AboutPage = () => {
+const About = () => {
     return (
-        <main className="bg-gray-900 text-white min-h-[calc(100vh-80px)] flex items-center justify-center px-6 py-16">
-            <div className="max-w-2xl space-y-6 text-center sm:text-left">
-                <h1 className="text-4xl font-black tracking-tight text-center sm:text-left">
-                    Sobre mí
-                </h1>
-                
-                <p className="text-gray-300 text-lg leading-relaxed font-light">
-                    Hola, soy <strong className="text-blue-400 font-semibold">Sebastian Cetina</strong>, un estudiante y apasionado desarrollador Full Stack. Me encanta aprender constantemente sobre nuevas tecnologías y crear soluciones digitales eficientes, escalables y con una gran experiencia de usuario.
-                </p>
+        <section id="about" className="bg-gray-900 text-white py-20">
+            <div className="container mx-auto px-6 max-w-4xl">
+                <div className="bg-gray-800/50 border border-gray-700 rounded-2xl p-8 sm:p-12">
+                    <div className="max-w-3xl">
+                        <span className="text-base font-medium text-blue-400">
+                            About Me
+                        </span>
 
-                <p className="text-gray-400 leading-relaxed font-light">
-                    Mi enfoque principal está en el desarrollo web moderno utilizando herramientas como Next.js, TypeScript y Tailwind CSS, siempre buscando escribir código limpio y estructurado.
-                </p>
+                        <h1 className="text-3xl sm:text-4xl font-bold mt-2">
+                            Learn more about me
+                        </h1>
 
-                <div className="flex justify-center sm:justify-start pt-4">
-                    <Link
-                        href={ROUTES.HOME}
-                        className="bg-blue-600 hover:bg-blue-500 text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 shadow-lg shadow-blue-600/20"
-                    >
-                        Volver al inicio
-                    </Link>
+                        <div className="space-y-6 text-gray-300 text-lg leading-relaxed mt-6">
+                            <p>
+                                Hello! I'm <span className="text-white font-semibold">Sebastian Cetina</span>, a Systems Engineering student passionate about the world of
+                                technology, software architecture, and especially backend development.
+                            </p>
+
+                            <p>
+                                My primary focus is building maintainable, scalable, and robust backend applications using <span className="text-blue-400 font-medium">Java </span>
+                                and <span className="text-blue-400 font-medium">Spring Boot</span>. I love understanding how things work under the hood—from database management
+                                with PostgreSQL to containerization with Docker.
+                            </p>
+
+                            <p>
+                                I love learning new things about backend development, Linux,
+                                infrastructure, and full-stack development. I enjoy challenges because I feel they make us better developers, and I am also learning English,
+                                as I consider it essential for our career.
+                            </p>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10 pt-8 border-t border-gray-700/60">
+                            <div className="flex flex-col gap-2">
+                                <FaGraduationCap className="text-blue-400 w-6 h-6" />
+                                <h3 className="font-semibold text-white">Education</h3>
+                                <p className="text-sm text-gray-400">Systems Engineering Student</p>
+                            </div>
+
+                            <div className="flex flex-col gap-2">
+                                <FaServer className="text-blue-400 w-6 h-6" />
+                                <h3 className="font-semibold text-white">Backend Focus</h3>
+                                <p className="text-sm text-gray-400">Java, Spring Boot & APIs</p>
+                            </div>
+
+                            <div className="flex flex-col gap-2">
+                                <FaTools className="text-blue-400 w-6 h-6" />
+                                <h3 className="font-semibold text-white">Continuous Learning</h3>
+                                <p className="text-sm text-gray-400">DevOps, Docker & Linux</p>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </main>
+        </section>
     );
 };
 
-export default AboutPage;
+export default About;
