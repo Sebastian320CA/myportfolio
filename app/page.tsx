@@ -113,7 +113,7 @@ const Page = () => {
 
                             {/* CV */}
                             <a
-                                href="/CV_HOJA_DE_VIDA_YOJHAN.pdf"
+                                href="/CvResumeYojhanCetina.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-4 py-2.5 rounded-lg text-sm font-medium border border-gray-700 transition-colors"
