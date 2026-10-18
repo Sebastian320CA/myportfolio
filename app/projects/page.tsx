@@ -29,11 +29,10 @@ const Projects = () => {
                         <div className="aspect-video bg-gray-950 max-h-[380px] w-full relative overflow-hidden flex items-center justify-center">
                             <video
                                 src="/ServiceHospital.mp4"
-                                autoPlay
-                                muted
-                                loop
+                                controls
                                 playsInline
                                 preload="auto"
+                            
                                 className="absolute inset-0 w-full h-full object-contain object-center"
                             />
                         </div>
@@ -87,11 +86,10 @@ const Projects = () => {
                         <div className="aspect-video bg-gray-950 max-h-[380px] w-full relative overflow-hidden flex items-center justify-center">
                             <video
                                 src="/ServiciosFinal.mp4"
-                                autoPlay
-                                muted
-                                loop
+                                controls
                                 playsInline
                                 preload="auto"
+                            
                                 className="absolute inset-0 w-full h-full object-contain object-center"
                             />
                         </div>
@@ -151,11 +149,10 @@ const Projects = () => {
                         <div className="aspect-video bg-gray-950 max-h-[380px] w-full relative overflow-hidden flex items-center justify-center">
                             <video
                                 src="/VotingSystem.mp4"
-                                autoPlay
-                                muted
-                                loop
+                                controls
                                 playsInline
                                 preload="auto"
+                            
                                 className="absolute inset-0 w-full h-full object-contain object-center"
                             />
                         </div>

@@ -1,13 +1,23 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 const NavBar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const closeMenu = () => {
+        setIsOpen(false);
+    };
+
     return (
         <header className="bg-gray-900/90 backdrop-blur-md text-white sticky top-0 z-50 border-b border-gray-800">
-            <div className="container mx-auto px-6 h-20 flex justify-between items-center">
+            <div className="container mx-auto px-4 sm:px-6 h-20 flex justify-between items-center">
 
                 <Link
                     href="/"
+                    onClick={closeMenu}
                     className="flex items-center gap-3 group"
                 >
                     <Image
@@ -29,7 +39,7 @@ const NavBar = () => {
                     </span>
                 </Link>
 
-                <nav>
+                <nav className="hidden md:block">
                     <ul className="flex items-center gap-8 font-medium text-sm text-gray-300">
                         <li>
                             <Link
@@ -39,6 +49,7 @@ const NavBar = () => {
                                 Home
                             </Link>
                         </li>
+
                         <li>
                             <Link
                                 href="/projects"
@@ -47,6 +58,7 @@ const NavBar = () => {
                                 Projects
                             </Link>
                         </li>
+
                         <li>
                             <Link
                                 href="/about"
@@ -55,6 +67,7 @@ const NavBar = () => {
                                 About
                             </Link>
                         </li>
+
                         <li>
                             <Link
                                 href="/credentials"
@@ -66,7 +79,70 @@ const NavBar = () => {
                     </ul>
                 </nav>
 
+                <button
+                    type="button"
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-700 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors"
+                    aria-label={isOpen ? "Close menu" : "Open menu"}
+                    aria-expanded={isOpen}
+                >
+                    {isOpen ? (
+                        <span className="text-2xl leading-none">×</span>
+                    ) : (
+                        <span className="text-2xl leading-none">☰</span>
+                    )}
+                </button>
+
             </div>
+
+ 
+            {isOpen && (
+                <nav className="md:hidden border-t border-gray-800 bg-gray-900/95 backdrop-blur-md">
+                    <ul className="container mx-auto px-4 py-4 space-y-1">
+
+                        <li>
+                            <Link
+                                href="/"
+                                onClick={closeMenu}
+                                className="block px-4 py-3 rounded-lg text-gray-300 hover:text-blue-400 hover:bg-gray-800 transition-colors"
+                            >
+                                Home
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link
+                                href="/projects"
+                                onClick={closeMenu}
+                                className="block px-4 py-3 rounded-lg text-gray-300 hover:text-blue-400 hover:bg-gray-800 transition-colors"
+                            >
+                                Projects
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link
+                                href="/about"
+                                onClick={closeMenu}
+                                className="block px-4 py-3 rounded-lg text-gray-300 hover:text-blue-400 hover:bg-gray-800 transition-colors"
+                            >
+                                About
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link
+                                href="/credentials"
+                                onClick={closeMenu}
+                                className="block px-4 py-3 rounded-lg text-gray-300 hover:text-blue-400 hover:bg-gray-800 transition-colors"
+                            >
+                                Credentials
+                            </Link>
+                        </li>
+
+                    </ul>
+                </nav>
+            )}
         </header>
     );
 };
