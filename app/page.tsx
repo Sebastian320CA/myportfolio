@@ -143,7 +143,7 @@ const Page = () => {
                                 My Email
                             </a>
                             <a
-                                href="https://wa.me"
+                                href="https://wa.me/+573213554709"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors"
