@@ -9,6 +9,9 @@ import {
     FaLinux,
     FaFilePdf,
 } from "react-icons/fa";
+import { FaWhatsapp } from 'react-icons/fa';
+
+
 
 import {
     SiSpringboot,
@@ -113,13 +116,22 @@ const Page = () => {
 
                             {/* CV */}
                             <a
-                                href="/CvResumeYojhanCetina.pdf"
+                                href="/CVHOJADEVIDAYOJHAN.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-4 py-2.5 rounded-lg text-sm font-medium border border-gray-700 transition-colors"
                             >
                                 <FaFilePdf className="w-4 h-4 text-red-400" />
-                                View CV
+                                View CV In Spanish
+                            </a>
+                            <a
+                                href="/CVResumeYojhanCetina.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-4 py-2.5 rounded-lg text-sm font-medium border border-gray-700 transition-colors"
+                            >
+                                <FaFilePdf className="w-4 h-4 text-red-400" />
+                                View CV In English
                             </a>
 
                             {/* Contact */}
@@ -128,8 +140,19 @@ const Page = () => {
                                 className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors"
                             >
                                 <FaEnvelope className="w-4 h-4" />
-                                Contact Me
+                                My Email
                             </a>
+                            <a
+                                href="https://wa.me"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-500 text-white px-5 py-2.5 rounded-lg text-sm font-medium transition-colors"
+                            >
+                                <FaWhatsapp className="w-4 h-4" />
+                                My Whatsapp Number
+                            </a>
+
+
 
                         </div>
 
