@@ -3,6 +3,8 @@ import { FaGithub, FaJava, FaDocker } from "react-icons/fa";
 import { SiSpringboot, SiGradle, SiSonarqubecloud } from "react-icons/si";
 import { SiReact, SiNodedotjs, SiTypescript, SiPostgresql } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
+import { SiSpringsecurity, SiThymeleaf } from 'react-icons/si';
+
 
 const Projects = () => {
     return (
@@ -24,7 +26,7 @@ const Projects = () => {
 
                 <div className="grid grid-cols-1 gap-10">
 
-                    {/* Proyecto 1: Server Alert */}
+                    {/* Proyecto 1: Synexis - External Equipment Control */}
                     <article className="bg-gray-800/50 border border-gray-700 rounded-xl overflow-hidden shadow-lg">
                         <div className="aspect-video bg-gray-950 max-h-[380px] w-full relative overflow-hidden flex items-center justify-center">
                             <video
@@ -32,7 +34,6 @@ const Projects = () => {
                                 controls
                                 playsInline
                                 preload="auto"
-                            
                                 className="absolute inset-0 w-full h-full object-contain object-center"
                             />
                         </div>
@@ -43,13 +44,12 @@ const Projects = () => {
                             </span>
 
                             <h3 className="text-2xl font-bold mt-2 text-white">
-                                Server Alert for Hospital Management System
+                                SIGEBEX Hospital Service — Synexis
                             </h3>
 
                             <p className="text-gray-400 text-base leading-relaxed mt-3">
-                                Monitoring and alert platform designed to detect server
-                                issues and provide real-time notifications in hospital
-                                environments.
+                                Web application designed to control and track external biomedical and technological
+                                equipment entering healthcare institutions, ensuring secure access and full movement traceability.
                             </p>
 
                             <div className="flex flex-wrap gap-2 mt-5">
@@ -58,6 +58,12 @@ const Projects = () => {
                                 </span>
                                 <span className="flex items-center gap-1.5 bg-gray-800/80 border border-gray-700 px-3 py-1 rounded-md text-xs text-gray-300">
                                     <SiSpringboot className="text-green-500 w-3.5 h-3.5" /> Spring Boot
+                                </span>
+                                <span className="flex items-center gap-1.5 bg-gray-800/80 border border-gray-700 px-3 py-1 rounded-md text-xs text-gray-300">
+                                    <SiSpringsecurity className="text-green-600 w-3.5 h-3.5" /> Spring Security
+                                </span>
+                                <span className="flex items-center gap-1.5 bg-gray-800/80 border border-gray-700 px-3 py-1 rounded-md text-xs text-gray-300">
+                                    <SiThymeleaf className="text-emerald-500 w-3.5 h-3.5" /> Thymeleaf
                                 </span>
                                 <span className="flex items-center gap-1.5 bg-gray-800/80 border border-gray-700 px-3 py-1 rounded-md text-xs text-gray-300">
                                     <SiPostgresql className="text-blue-400 w-3.5 h-3.5" /> PostgreSQL
@@ -81,6 +87,7 @@ const Projects = () => {
                         </div>
                     </article>
 
+
                     {/* Proyecto 2: Operational Status Monitoring System */}
                     <article className="bg-gray-800/50 border border-gray-700 rounded-xl overflow-hidden shadow-lg">
                         <div className="aspect-video bg-gray-950 max-h-[380px] w-full relative overflow-hidden flex items-center justify-center">
@@ -89,7 +96,7 @@ const Projects = () => {
                                 controls
                                 playsInline
                                 preload="auto"
-                            
+
                                 className="absolute inset-0 w-full h-full object-contain object-center"
                             />
                         </div>
@@ -152,7 +159,7 @@ const Projects = () => {
                                 controls
                                 playsInline
                                 preload="auto"
-                            
+
                                 className="absolute inset-0 w-full h-full object-contain object-center"
                             />
                         </div>
