@@ -4,6 +4,8 @@ import { SiSpringboot, SiGradle, SiSonarqubecloud } from "react-icons/si";
 import { SiReact, SiNodedotjs, SiTypescript, SiPostgresql } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
 import { SiSpringsecurity, SiThymeleaf } from 'react-icons/si';
+import { FaDesktop, FaLock, FaLeaf } from "react-icons/fa";
+import { SiMariadb, SiApachemaven } from "react-icons/si";
 
 
 const Projects = () => {
@@ -140,6 +142,72 @@ const Projects = () => {
                             <div className="mt-6">
                                 <a
                                     href="https://github.com/Sebastian320CA/san_rafael"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                                >
+                                    <FaGithub className="mr-2 text-lg" />
+                                    GitHub Repository
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+
+
+                    {/* Proyecto 3: EcoGrow */}
+                    <article className="bg-gray-800/50 border border-gray-700 rounded-xl overflow-hidden shadow-lg">
+                        <div className="aspect-video bg-gray-950 max-h-[380px] w-full relative overflow-hidden flex items-center justify-center">
+                            <video
+                                src="/EcoGrow.mp4"
+                                controls
+                                playsInline
+                                preload="auto"
+
+                                className="absolute inset-0 w-full h-full object-contain object-center"
+                            />
+                        </div>
+
+                        <div className="p-6 sm:p-8">
+                            <span className="text-xs font-semibold uppercase tracking-wider text-blue-400">
+                                Desktop App · Academic Project
+                            </span>
+
+                            <h3 className="text-2xl font-bold mt-2 text-white">
+                                EcoGrow — Reforestation Management System
+                            </h3>
+
+                            <p className="text-gray-400 text-base leading-relaxed mt-3">
+                                Desktop application to manage reforestation and conservation areas:
+                                living areas, tree taxonomy, planting activities and forest censuses,
+                                with a dashboard, role-based access and BCrypt authentication,
+                                built with GoF design patterns (Singleton, Facade).
+                            </p>
+
+                            <div className="flex flex-wrap gap-2 mt-5">
+                                <span className="flex items-center gap-1.5 bg-gray-800/80 border border-gray-700 px-3 py-1 rounded-md text-xs text-gray-300">
+                                    <FaJava className="text-orange-500 w-3.5 h-3.5" /> Java 25
+                                </span>
+                                <span className="flex items-center gap-1.5 bg-gray-800/80 border border-gray-700 px-3 py-1 rounded-md text-xs text-gray-300">
+                                    <FaDesktop className="text-sky-400 w-3.5 h-3.5" /> JavaFX
+                                </span>
+                                <span className="flex items-center gap-1.5 bg-gray-800/80 border border-gray-700 px-3 py-1 rounded-md text-xs text-gray-300">
+                                    <SiMariadb className="text-teal-400 w-3.5 h-3.5" /> MariaDB / MySQL
+                                </span>
+                                <span className="flex items-center gap-1.5 bg-gray-800/80 border border-gray-700 px-3 py-1 rounded-md text-xs text-gray-300">
+                                    <SiApachemaven className="text-red-400 w-3.5 h-3.5" /> Maven
+                                </span>
+                                <span className="flex items-center gap-1.5 bg-gray-800/80 border border-gray-700 px-3 py-1 rounded-md text-xs text-gray-300">
+                                    <FaLock className="text-green-500 w-3.5 h-3.5" /> BCrypt
+                                </span>
+                                <span className="flex items-center gap-1.5 bg-gray-800/80 border border-gray-700 px-3 py-1 rounded-md text-xs text-gray-300">
+                                    <FaLeaf className="text-lime-400 w-3.5 h-3.5" /> GoF Patterns
+                                </span>
+                            </div>
+
+                            <div className="mt-6">
+                                <a
+                                    href="https://github.com/Sebastian320CA/areas-de-vida"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="inline-flex items-center bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
