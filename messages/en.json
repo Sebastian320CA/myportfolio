@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "title": "Sebastian Cetina | Backend Developer",
+    "description": "Portfolio of Sebastian Cetina, a Systems Engineering student building backend applications with Java, Spring Boot and PostgreSQL."
+  },
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "credentials": "Credentials",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language",
+    "logoAlt": "Sebastian Dev logo"
+  },
+  "home": {
+    "role": "Backend Developer",
+    "student": "Systems Engineering Student",
+    "location": "Bogotá, Colombia",
+    "greeting": "Hi, I'm",
+    "intro": "I build maintainable backend applications with Java and Spring Boot, with a focus on software architecture, databases, Linux and DevOps practices.",
+    "openTo": "Open to internships and junior backend roles, in Colombia or remote.",
+    "emailCta": "Email me",
+    "whatsappCta": "WhatsApp",
+    "whatsappLabel": "Chat with me on WhatsApp",
+    "whatsappMessage": "Hi Sebastian, I saw your portfolio and I'd like to talk.",
+    "cvEn": "CV (English)",
+    "cvEs": "CV (Español)",
+    "terminal": {
+      "stackFile": "stack.txt",
+      "status": "open to internships and junior roles"
+    },
+    "stack": {
+      "label": "Stack",
+      "main": "Main stack",
+      "also": "Also working with"
+    },
+    "featured": {
+      "label": "Featured project",
+      "highlightsTitle": "Highlights",
+      "highlights": [
+        "Hexagonal architecture (ports and adapters) to keep business rules independent from the database and the UI",
+        "Dockerized PostgreSQL, with SonarQube for static code analysis"
+      ],
+      "description": "Monitoring system for the critical platforms of a university hospital. It checks the availability of Admissions, Laboratory and Medical Records, and calculates the hospital's overall severity level in real time.",
+      "title": "Hospital Operational Status Monitor",
+      "viewAll": "See all projects",
+      "repo": "View repository"
+    },
+    "contact": {
+      "title": "Let's talk",
+      "text": "If you have an opportunity, a question about my projects, or just want to say hi, write to me."
+    }
+  },
+  "about": {
+    "label": "About",
+    "title": "About me",
+    "p1": "Hi, I'm <name>Sebastian Cetina</name>, a Systems Engineering student from Bogotá, Colombia. I focus on backend development with <hl>Java</hl> and <hl>Spring Boot</hl>.",
+    "p2": "In my university projects I've built a hospital operational status monitor using hexagonal architecture, an equipment tracking system secured with Spring Security, and a JavaFX desktop app that applies the DAO, Singleton and Facade patterns. I use PostgreSQL for data and Docker to run everything the same way on any machine.",
+    "p3": "I enjoy programming in general, but backend is where I want to focus. I like designing and implementing the logic that makes an application work. Its results are less visible than a user interface, but I enjoy seeing how the backend connects to the frontend and shapes the user experience.",
+    "p4": "I work on Linux day to day, I'm learning AWS (I've completed Cloud Practitioner Essentials) and I'm improving my English because I know it matters for my career.",
+    "highlights": {
+      "education": {
+        "title": "Education",
+        "text": "Systems Engineering student · University of Santo Tomás · Bogotá, Colombia"
+      },
+      "build": {
+        "title": "What I build",
+        "text": "Web backends with Java, Spring Boot and PostgreSQL, packaged with Docker"
+      },
+      "learning": {
+        "title": "Learning now",
+        "text": "AWS and cloud fundamentals, Linux, DevOps and English"
+      }
+    }
+  },
+  "projects": {
+    "label": "Projects",
+    "title": "Some things I've built",
+    "intro": "A selection of projects I've worked on while learning and applying backend development and software architecture concepts.",
+    "repo": "GitHub repository",
+    "videoOnly": "Video demonstration only (source code unavailable)",
+    "videoTitle": "Demo video: {title}",
+    "items": {
+      "scanner": {
+        "kind": "Backend · Team Project",
+        "title": "VulnScope: Vulnerability Scanner",
+        "description": "Web platform where you upload a compressed project and get a security report: where each vulnerability is (file and line), whether the project passes a Quality Gate, and how to fix it. It is similar to SonarQube, but simpler, more intuitive and used straight from the browser. Reports can be downloaded as PDF. Built by a team with Python, hexagonal architecture, JWT authentication and Docker."
+      },
+      "hospitalService": {
+        "kind": "Full-Stack · Academic Project",
+        "title": "SIGEBEX Hospital Service (Synexis)",
+        "description": "Web application designed to control and track external biomedical and technological equipment entering healthcare institutions, ensuring secure access and full movement traceability."
+      },
+      "monitor": {
+        "kind": "Full-Stack · Academic Project",
+        "title": "Operational Status Monitoring System",
+        "description": "Platform designed to centralize and monitor critical hospital infrastructure, using Hexagonal Architecture to manage operational status and system conditions."
+      },
+      "ecogrow": {
+        "kind": "Desktop App · Academic Project",
+        "title": "EcoGrow: Reforestation Management System",
+        "description": "Desktop application to manage reforestation and conservation areas: living areas, tree taxonomy, planting activities and forest censuses, with a dashboard, role-based access and BCrypt authentication, built with GoF design patterns (Singleton, Facade)."
+      },
+      "voting": {
+        "kind": "Full-Stack · Academic Project",
+        "title": "University Voting System",
+        "description": "Digital voting platform developed for university elections, designed to provide a secure, intuitive, and real-time voting experience for students and faculty."
+      }
+    }
+  },
+  "credentials": {
+    "label": "Credentials",
+    "title": "Courses & training",
+    "intro": "Courses and training programs I have completed in cloud and AI. These are completion certificates, not proctored exam certifications.",
+    "nextGoal": "Next goal: take the official AWS Certified Cloud Practitioner exam.",
+    "types": {
+      "course": "Course completion",
+      "exam-prep": "Exam prep session"
+    },
+    "issuedBy": "Issued by",
+    "duration": "Duration",
+    "viewCertificate": "View certificate",
+    "verifyOnline": "Verify online",
+    "topics": "Topics covered"
+  },
+  "footer": {
+    "tagline": "Systems Engineering student focused on backend development with Java and Spring Boot.",
+    "navigation": "Navigation",
+    "connect": "Connect",
+    "rights": "All rights reserved.",
+    "built": "Built with Next.js, TypeScript and Tailwind CSS"
+  }
+}

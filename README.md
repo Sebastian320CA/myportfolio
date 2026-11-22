@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sebastian Cetina: Portfolio
 
-## Getting Started
+Bilingual (English / Español) portfolio built with Next.js, TypeScript, Tailwind CSS and next-intl.
 
-First, run the development server:
+- English: `/`, `/projects`, `/about`, `/credentials`
+- Español: `/es`, `/es/projects`, `/es/about`, `/es/credentials`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Run it
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Install dependencies with `npm install`. Use `npm run dev` for development.
+For a lighter use of RAM, run `npm run build` and then `npm start`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Where things live
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| What | Where |
+|---|---|
+| Translations | `messages/en.json`, `messages/es.json` |
+| Languages and default locale | `i18n/routing.ts` |
+| Projects (tech, repo, video) | `lib/projects.ts` |
+| Tech icons | `lib/tech.tsx` |
+| Contact links | `lib/site.ts` |
+| Colors and fonts | `app/globals.css` |
 
-## Learn More
+## Project videos
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Videos are heavy and should not live in the repo. In `lib/projects.ts`, set `youtubeId` on a
+project (an unlisted YouTube video works) and the page embeds it lazily. Once every project has a
+`youtubeId`, the `.mp4` files in `public/` and the `*.mp4` rule in `.gitattributes` can be removed.
+Until then, the local file is used and is only downloaded when the visitor presses play.

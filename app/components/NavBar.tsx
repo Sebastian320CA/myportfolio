@@ -1,145 +1,105 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
+import LanguageSwitcher from "./LanguageSwitcher";
+
+const LINKS = [
+    { href: "/", key: "home" },
+    { href: "/projects", key: "projects" },
+    { href: "/about", key: "about" },
+    { href: "/credentials", key: "credentials" },
+] as const;
 
 const NavBar = () => {
+    const t = useTranslations("nav");
+    const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
 
-    const closeMenu = () => {
-        setIsOpen(false);
-    };
+    const closeMenu = () => setIsOpen(false);
+    const isActive = (href: string) =>
+        href === "/" ? pathname === "/" : pathname.startsWith(href);
 
     return (
-        <header className="bg-gray-900/90 backdrop-blur-md text-white sticky top-0 z-50 border-b border-gray-800">
-            <div className="container mx-auto px-4 sm:px-6 h-20 flex justify-between items-center">
-
+        <header className="sticky top-0 z-50 border-b border-line bg-ink/80 backdrop-blur-md">
+            <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6">
                 <Link
                     href="/"
                     onClick={closeMenu}
-                    className="flex items-center gap-3 group"
+                    className="group flex items-center gap-3"
                 >
                     <Image
                         src="/Logo.png"
-                        alt="Sebastian Dev Logo"
-                        width={52}
-                        height={52}
+                        alt={t("logoAlt")}
+                        width={44}
+                        height={44}
                         className="object-contain transition-transform duration-200 group-hover:scale-105"
                         priority
                     />
-
-                    <span className="text-lg font-bold tracking-wide">
-                        <span className="text-white">
-                            Sebastian
-                        </span>{" "}
-                        <span className="text-blue-400">
-                            Dev
-                        </span>
+                    <span className="font-mono text-sm font-semibold tracking-tight">
+                        sebastian<span className="text-accent">.dev</span>
                     </span>
                 </Link>
 
-                <nav className="hidden md:block">
-                    <ul className="flex items-center gap-8 font-medium text-sm text-gray-300">
-                        <li>
-                            <Link
-                                href="/"
-                                className="hover:text-blue-400 transition-colors"
-                            >
-                                Home
-                            </Link>
-                        </li>
+                <div className="flex items-center gap-4">
+                    <nav className="hidden md:block" aria-label="Main">
+                        <ul className="flex items-center gap-7 text-sm">
+                            {LINKS.map(({ href, key }) => (
+                                <li key={href}>
+                                    <Link
+                                        href={href}
+                                        aria-current={isActive(href) ? "page" : undefined}
+                                        className={`transition-colors hover:text-white ${
+                                            isActive(href)
+                                                ? "text-white"
+                                                : "text-muted"
+                                        }`}
+                                    >
+                                        {t(key)}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </nav>
 
-                        <li>
-                            <Link
-                                href="/projects"
-                                className="hover:text-blue-400 transition-colors"
-                            >
-                                Projects
-                            </Link>
-                        </li>
+                    <LanguageSwitcher />
 
-                        <li>
-                            <Link
-                                href="/about"
-                                className="hover:text-blue-400 transition-colors"
-                            >
-                                About
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Link
-                                href="/credentials"
-                                className="hover:text-blue-400 transition-colors"
-                            >
-                                Credentials
-                            </Link>
-                        </li>
-                    </ul>
-                </nav>
-
-                <button
-                    type="button"
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-700 text-gray-300 hover:text-white hover:bg-gray-800 transition-colors"
-                    aria-label={isOpen ? "Close menu" : "Open menu"}
-                    aria-expanded={isOpen}
-                >
-                    {isOpen ? (
-                        <span className="text-2xl leading-none">×</span>
-                    ) : (
-                        <span className="text-2xl leading-none">☰</span>
-                    )}
-                </button>
-
+                    <button
+                        type="button"
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-line text-soft transition-colors hover:text-white md:hidden"
+                        aria-label={isOpen ? t("closeMenu") : t("openMenu")}
+                        aria-expanded={isOpen}
+                    >
+                        <span aria-hidden="true" className="text-xl leading-none">
+                            {isOpen ? "×" : "☰"}
+                        </span>
+                    </button>
+                </div>
             </div>
 
- 
             {isOpen && (
-                <nav className="md:hidden border-t border-gray-800 bg-gray-900/95 backdrop-blur-md">
-                    <ul className="container mx-auto px-4 py-4 space-y-1">
-
-                        <li>
-                            <Link
-                                href="/"
-                                onClick={closeMenu}
-                                className="block px-4 py-3 rounded-lg text-gray-300 hover:text-blue-400 hover:bg-gray-800 transition-colors"
-                            >
-                                Home
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Link
-                                href="/projects"
-                                onClick={closeMenu}
-                                className="block px-4 py-3 rounded-lg text-gray-300 hover:text-blue-400 hover:bg-gray-800 transition-colors"
-                            >
-                                Projects
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Link
-                                href="/about"
-                                onClick={closeMenu}
-                                className="block px-4 py-3 rounded-lg text-gray-300 hover:text-blue-400 hover:bg-gray-800 transition-colors"
-                            >
-                                About
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Link
-                                href="/credentials"
-                                onClick={closeMenu}
-                                className="block px-4 py-3 rounded-lg text-gray-300 hover:text-blue-400 hover:bg-gray-800 transition-colors"
-                            >
-                                Credentials
-                            </Link>
-                        </li>
-
+                <nav
+                    className="border-t border-line bg-ink md:hidden"
+                    aria-label="Mobile"
+                >
+                    <ul className="container mx-auto space-y-1 px-4 py-3">
+                        {LINKS.map(({ href, key }) => (
+                            <li key={href}>
+                                <Link
+                                    href={href}
+                                    onClick={closeMenu}
+                                    aria-current={isActive(href) ? "page" : undefined}
+                                    className={`block rounded-md px-3 py-2.5 text-sm transition-colors hover:bg-panel hover:text-white ${
+                                        isActive(href) ? "bg-panel text-white" : "text-muted"
+                                    }`}
+                                >
+                                    {t(key)}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
             )}

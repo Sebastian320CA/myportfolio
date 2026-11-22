@@ -1,0 +1,134 @@
+{
+  "meta": {
+    "title": "Sebastian Cetina | Desarrollador Backend",
+    "description": "Portafolio de Sebastian Cetina, estudiante de Ingeniería de Sistemas que desarrolla aplicaciones backend con Java, Spring Boot y PostgreSQL."
+  },
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "credentials": "Credenciales",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "language": "Idioma",
+    "logoAlt": "Logo de Sebastian Dev"
+  },
+  "home": {
+    "role": "Desarrollador Backend",
+    "student": "Estudiante de Ingeniería de Sistemas",
+    "location": "Bogotá, Colombia",
+    "greeting": "Hola, soy",
+    "intro": "Construyo aplicaciones backend mantenibles con Java y Spring Boot, con enfoque en arquitectura de software, bases de datos, Linux y prácticas de DevOps.",
+    "openTo": "Disponible para prácticas y roles junior de backend, en Colombia o remoto.",
+    "emailCta": "Escríbeme",
+    "whatsappCta": "WhatsApp",
+    "whatsappLabel": "Escríbeme por WhatsApp",
+    "whatsappMessage": "Hola Sebastian, vi tu portafolio y me gustaría hablar contigo.",
+    "cvEn": "CV (English)",
+    "cvEs": "CV (Español)",
+    "terminal": {
+      "stackFile": "stack.txt",
+      "status": "disponible para prácticas y roles junior"
+    },
+    "stack": {
+      "label": "Stack",
+      "main": "Stack principal",
+      "also": "También trabajo con"
+    },
+    "featured": {
+      "label": "Proyecto destacado",
+      "highlightsTitle": "Puntos clave",
+      "highlights": [
+        "Arquitectura hexagonal (puertos y adaptadores) para mantener las reglas de negocio independientes de la base de datos y de la interfaz",
+        "PostgreSQL en Docker, con SonarQube para el análisis estático del código"
+      ],
+      "description": "Sistema de monitoreo de las plataformas críticas de un hospital universitario. Verifica la disponibilidad de Admisiones, Laboratorio e Historias Clínicas, y calcula en tiempo real el nivel de severidad general del hospital.",
+      "title": "Monitor del Estado Operativo Hospitalario",
+      "viewAll": "Ver todos los proyectos",
+      "repo": "Ver repositorio"
+    },
+    "contact": {
+      "title": "Hablemos",
+      "text": "Si tienes una oportunidad, una pregunta sobre mis proyectos, o solo quieres saludar, escríbeme."
+    }
+  },
+  "about": {
+    "label": "Sobre mí",
+    "title": "Conoce más sobre mí",
+    "p1": "Hola, soy <name>Sebastian Cetina</name>, estudiante de Ingeniería de Sistemas de Bogotá, Colombia. Me enfoco en el desarrollo backend con <hl>Java</hl> y <hl>Spring Boot</hl>.",
+    "p2": "En mis proyectos universitarios he construido un monitor del estado operativo de un hospital con arquitectura hexagonal, un sistema de control de equipos protegido con Spring Security y una aplicación de escritorio en JavaFX que aplica los patrones DAO, Singleton y Facade. Uso PostgreSQL para los datos y Docker para que todo funcione igual en cualquier máquina.",
+    "p3": "Me gusta programar en general, pero el backend es donde quiero enfocarme. Disfruto diseñar e implementar la lógica que hace funcionar una aplicación. Sus resultados se ven menos que los de una interfaz, pero me gusta ver cómo el backend se conecta con el frontend y mejora la experiencia del usuario.",
+    "p4": "Trabajo con Linux a diario, estoy aprendiendo AWS (completé Cloud Practitioner Essentials) y mejoro mi inglés porque sé que es importante para mi carrera.",
+    "highlights": {
+      "education": {
+        "title": "Educación",
+        "text": "Estudiante de Ingeniería de Sistemas · Universidad Santo Tomás · Bogotá, Colombia"
+      },
+      "build": {
+        "title": "Qué construyo",
+        "text": "Backends web con Java, Spring Boot y PostgreSQL, empaquetados con Docker"
+      },
+      "learning": {
+        "title": "Aprendiendo ahora",
+        "text": "Fundamentos de AWS y nube, Linux, DevOps e inglés"
+      }
+    }
+  },
+  "projects": {
+    "label": "Proyectos",
+    "title": "Algunas cosas que he construido",
+    "intro": "Una selección de proyectos en los que he trabajado mientras aprendo y aplico conceptos de desarrollo backend y arquitectura de software.",
+    "repo": "Repositorio en GitHub",
+    "videoOnly": "Solo video de demostración (código fuente no disponible)",
+    "videoTitle": "Video de demostración: {title}",
+    "items": {
+      "scanner": {
+        "kind": "Backend · Proyecto en equipo",
+        "title": "VulnScope: Escáner de Vulnerabilidades",
+        "description": "Plataforma web donde subes un proyecto comprimido y obtienes un reporte de seguridad: dónde está cada vulnerabilidad (archivo y línea), si el proyecto aprueba un Quality Gate y cómo solucionarla. Es parecida a SonarQube, pero más simple, más intuitiva y se usa directo desde el navegador. Los reportes se descargan en PDF. Desarrollada en equipo con Python, arquitectura hexagonal, autenticación JWT y Docker."
+      },
+      "hospitalService": {
+        "kind": "Full-Stack · Proyecto académico",
+        "title": "SIGEBEX Hospital Service (Synexis)",
+        "description": "Aplicación web para controlar y hacer seguimiento de los equipos biomédicos y tecnológicos externos que ingresan a instituciones de salud, con acceso seguro y trazabilidad completa de sus movimientos."
+      },
+      "monitor": {
+        "kind": "Full-Stack · Proyecto académico",
+        "title": "Sistema de Monitoreo del Estado Operativo",
+        "description": "Plataforma para centralizar y monitorear la infraestructura crítica de un hospital, que usa arquitectura hexagonal para gestionar el estado operativo y las condiciones de los sistemas."
+      },
+      "ecogrow": {
+        "kind": "Aplicación de escritorio · Proyecto académico",
+        "title": "EcoGrow: Sistema de Gestión de Reforestación",
+        "description": "Aplicación de escritorio para gestionar áreas de reforestación y conservación: áreas de vida, taxonomía de árboles, actividades de siembra y censos forestales, con panel de control, acceso por roles y autenticación con BCrypt, construida con patrones de diseño GoF (Singleton, Facade)."
+      },
+      "voting": {
+        "kind": "Full-Stack · Proyecto académico",
+        "title": "Sistema de Votación Universitario",
+        "description": "Plataforma de votación digital para elecciones universitarias, pensada para ofrecer a estudiantes y docentes una experiencia de voto segura, intuitiva y en tiempo real."
+      }
+    }
+  },
+  "credentials": {
+    "label": "Credenciales",
+    "title": "Cursos y formación",
+    "intro": "Cursos y programas de formación que he completado en nube e IA. Son certificados de finalización, no certificaciones de examen supervisado.",
+    "nextGoal": "Próxima meta: presentar el examen oficial AWS Certified Cloud Practitioner.",
+    "types": {
+      "course": "Curso completado",
+      "exam-prep": "Sesión de preparación de examen"
+    },
+    "issuedBy": "Emitido por",
+    "duration": "Duración",
+    "viewCertificate": "Ver certificado",
+    "verifyOnline": "Verificar en línea",
+    "topics": "Temas cubiertos"
+  },
+  "footer": {
+    "tagline": "Estudiante de Ingeniería de Sistemas enfocado en el desarrollo backend con Java y Spring Boot.",
+    "navigation": "Navegación",
+    "connect": "Contacto",
+    "rights": "Todos los derechos reservados.",
+    "built": "Hecho con Next.js, TypeScript y Tailwind CSS"
+  }
+}
