@@ -31,43 +31,6 @@ const ALSO_STACK: TechRef[] = [
 const secondaryButton =
     "inline-flex items-center gap-2 rounded-md border border-line bg-panel px-4 py-2.5 text-sm font-medium text-soft transition-colors hover:border-accent/50 hover:text-white";
 
-const ARCH_LOGO = [
-    "      /\\",
-    "     /  \\",
-    "    /\\   \\",
-    "   /      \\",
-    "  /   ,,   \\",
-    " /   |  |  -\\",
-    "/_-''    ''-_\\",
-].join("\n");
-
-const SPECS = [
-    ["OS", "Arch Linux x86_64"],
-    ["Shell", "zsh"],
-    ["Editor", "nvim"],
-    ["Stack", "java · spring"],
-];
-
-const TERMINAL_STACK = [
-    "java",
-    "spring-boot",
-    "postgresql",
-    "docker",
-    "linux",
-    "gradle",
-];
-const TERMINAL_PROJECTS = ["hospital-service/", "san_rafael/", "areas-de-vida/"];
-
-const Prompt = ({ path = "~" }: { path?: string }) => (
-    <span className="select-none">
-        <span className="text-accent">sebastian</span>
-        <span className="text-muted">@</span>
-        <span className="text-accent">arch</span>{" "}
-        <span className="text-soft">{path}</span>{" "}
-        <span className="text-accent">❯</span>{" "}
-    </span>
-);
-
 type Props = { params: Promise<{ locale: string }> };
 
 export default async function Home({ params }: Props) {
@@ -134,7 +97,7 @@ export default async function Home({ params }: Props) {
                             </a>
                             <a
                                 href={whatsappUrl}
-                                target="_blank"
+                                target="+57 3213554709"
                                 rel="noopener noreferrer"
                                 aria-label={t("whatsappLabel")}
                                 className={secondaryButton}
@@ -147,7 +110,7 @@ export default async function Home({ params }: Props) {
                         <div className="flex flex-wrap gap-3">
                             <a
                                 href={SITE.github}
-                                target="_blank"
+                                target="https://github.com/Sebastian320CA"
                                 rel="noopener noreferrer"
                                 className={secondaryButton}
                             >
@@ -156,7 +119,7 @@ export default async function Home({ params }: Props) {
                             </a>
                             <a
                                 href={SITE.linkedin}
-                                target="_blank"
+                                target="https://www.linkedin.com/in/sebastian-cetina/"
                                 rel="noopener noreferrer"
                                 className={secondaryButton}
                             >
@@ -186,79 +149,37 @@ export default async function Home({ params }: Props) {
 
                     {/* Terminal card */}
                     <div
-                        className="group w-full max-w-lg justify-self-center overflow-hidden rounded-lg border border-line bg-panel shadow-2xl shadow-black/40 transition-shadow duration-300 hover:shadow-accent/10 lg:justify-self-end"
+                        className="w-full max-w-lg justify-self-center overflow-hidden rounded-lg border border-line bg-panel shadow-2xl shadow-black/40 lg:justify-self-end"
                         aria-hidden="true"
                     >
                         <div className="flex items-center gap-1.5 border-b border-line px-4 py-3">
-                            <span className="h-2.5 w-2.5 rounded-full bg-line transition-colors group-hover:bg-red-400/80" />
-                            <span className="h-2.5 w-2.5 rounded-full bg-line transition-colors group-hover:bg-yellow-400/80" />
-                            <span className="h-2.5 w-2.5 rounded-full bg-line transition-colors group-hover:bg-green-400/80" />
+                            <span className="h-2.5 w-2.5 rounded-full bg-line" />
+                            <span className="h-2.5 w-2.5 rounded-full bg-line" />
+                            <span className="h-2.5 w-2.5 rounded-full bg-line" />
                             <span className="ml-3 font-mono text-xs text-muted">
-                                sebastian@arch: ~
+                                ~/sebastian
                             </span>
                         </div>
-
                         <div className="space-y-1 p-5 font-mono text-[13px] leading-relaxed sm:text-sm">
                             <p>
-                                <Prompt /> fastfetch
+                                <span className="text-accent">$</span> whoami
                             </p>
-                            <div className="flex items-center gap-5 py-2">
-                                <pre className="hidden text-accent sm:block">{ARCH_LOGO}</pre>
-                                <div>
-                                    <p>
-                                        <span className="text-accent">sebastian</span>
-                                        <span className="text-muted">@</span>
-                                        <span className="text-accent">arch</span>
-                                    </p>
-                                    <p className="text-muted">──────────────</p>
-                                    {SPECS.map(([key, value]) => (
-                                        <p key={key}>
-                                            <span className="text-accent">{key}</span>
-                                            <span className="text-muted">: </span>
-                                            <span className="text-soft">{value}</span>
-                                        </p>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <p className="pt-2">
-                                <Prompt /> cat {t("terminal.stackFile")}
+                            <p className="text-soft">sebastian-cetina</p>
+                            <p className="pt-3">
+                                <span className="text-accent">$</span> cat {t("terminal.stackFile")}
                             </p>
-                            <p className="flex flex-wrap gap-x-2 gap-y-1">
-                                {TERMINAL_STACK.map((tech) => (
-                                    <span
-                                        key={tech}
-                                        className="rounded border border-line px-1.5 text-soft"
-                                    >
-                                        {tech}
-                                    </span>
-                                ))}
+                            <p className="text-soft">java · spring-boot · postgresql</p>
+                            <p className="text-soft">docker · linux · gradle</p>
+                            <p className="pt-3">
+                                <span className="text-accent">$</span> ls projects/
                             </p>
-
-                            <p className="pt-2">
-                                <Prompt /> ls projects/
+                            <p className="text-soft">hospital-service/  san_rafael/  areas-de-vida/</p>
+                            <p className="pt-3">
+                                <span className="text-accent">$</span> status
                             </p>
-                            <p className="text-soft">
-                                {TERMINAL_PROJECTS.map((name) => (
-                                    <span key={name} className="mr-4 inline-block">
-                                        {name}
-                                    </span>
-                                ))}
-                            </p>
-
-                            <p className="pt-2">
-                                <Prompt /> status
-                            </p>
-                            <p className="flex items-center gap-2 text-accent">
-                                <span className="relative flex h-2 w-2">
-                                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60 motion-reduce:animate-none" />
-                                    <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-                                </span>
-                                {t("terminal.status")}
-                            </p>
-
+                            <p className="text-accent">● {t("terminal.status")}</p>
                             <p>
-                                <Prompt />
+                                <span className="text-accent">$</span>{" "}
                                 <span className="inline-block h-4 w-2 translate-y-0.5 animate-pulse bg-soft motion-reduce:animate-none" />
                             </p>
                         </div>

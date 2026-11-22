@@ -1,28 +1,41 @@
+import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { FaAws, FaExternalLinkAlt, FaGraduationCap, FaFlagCheckered } from "react-icons/fa";
 import SectionHeading from '../../components/SectionHeading';
 
-type CredentialType = 'course' | 'exam-prep';
+type CredentialType = 'course' | 'exam-prep' | 'hackathon';
+type IconKind = 'aws' | 'nasa' | 'default';
 
 interface Credential {
     id: string;
     title: string;
     type: CredentialType;
     issuer: string;
-    completed: string; // YYYY-MM, used for sorting and display
+    completed: string;
     duration: string;
-    certificateUrl?: string; // completion certificate PDF
-    verificationUrl?: string; // only when a real external link exists (Credly, TIDWIT, etc.)
+    certificateUrl?: string;
+    verificationUrl?: string;
     skills: string[];
-    isAws?: boolean;
+    icon?: IconKind;
 }
 
-// Set to false to hide the "next goal" line.
+
 const SHOW_NEXT_GOAL = true;
 
 const credentialsData: Credential[] = [
     {
         id: '1',
+        title: 'NASA Space Apps Challenge 2026',
+        type: 'hackathon',
+        issuer: 'NASA Space Apps Challenge',
+        completed: '2026-11',
+        duration: '48 h',
+        certificateUrl: '/Nasa.pdf',
+        skills: ['Space Data', 'Lunar Landing Site Navigator', 'Problem Solving'],
+        icon: 'nasa',
+    },
+    {
+        id: '2',
         title: 'Gen AI Intermedio',
         type: 'course',
         issuer: 'AWS Entrena LATAM / TIDWIT',
@@ -30,10 +43,10 @@ const credentialsData: Credential[] = [
         duration: '4h 10m',
         certificateUrl: '/GenAI-Intermedio.pdf',
         skills: ['Generative AI', 'AWS Cloud', 'Prompting', 'LLMs'],
-        isAws: true,
+        icon: 'aws',
     },
     {
-        id: '2',
+        id: '3',
         title: 'Artificial Intelligence Essentials',
         type: 'course',
         issuer: 'HPE (AvanzaTEC)',
@@ -43,7 +56,7 @@ const credentialsData: Credential[] = [
         skills: ['AI Fundamentals', 'Machine Learning', 'Data Science'],
     },
     {
-        id: '3',
+        id: '4',
         title: 'AWS AI Practitioner Prep – Week 3',
         type: 'exam-prep',
         issuer: 'AWS Entrena Colombia / TIDWIT',
@@ -51,10 +64,10 @@ const credentialsData: Credential[] = [
         duration: '1h 45m',
         certificateUrl: '/CertificateA.pdf',
         skills: ['Exam Prep', 'AI Models', 'AWS AI Services'],
-        isAws: true,
+        icon: 'aws',
     },
     {
-        id: '4',
+        id: '5',
         title: 'AWS Cloud Practitioner Essentials',
         type: 'course',
         issuer: 'AWS Entrena Colombia / TIDWIT',
@@ -62,10 +75,10 @@ const credentialsData: Credential[] = [
         duration: '12h 45m',
         certificateUrl: '/Certificate.pdf',
         skills: ['Cloud Computing', 'AWS Services', 'Cloud Architecture', 'Security'],
-        isAws: true,
+        icon: 'aws',
     },
     {
-        id: '5',
+        id: '6',
         title: 'Gen AI Fundamentos',
         type: 'course',
         issuer: 'AWS Entrena LATAM / TIDWIT',
@@ -73,7 +86,7 @@ const credentialsData: Credential[] = [
         duration: '1h 54m',
         certificateUrl: '/GenAI.pdf',
         skills: ['Generative AI', 'Cloud AI', 'AI Ethics'],
-        isAws: true,
+        icon: 'aws',
     },
 ];
 
@@ -81,6 +94,23 @@ const credentialsData: Credential[] = [
 const sortedCredentials = [...credentialsData].sort((a, b) =>
     b.completed.localeCompare(a.completed)
 );
+
+const CredentialIcon = ({ icon = 'default' }: { icon?: IconKind }) => {
+    if (icon === 'aws')
+        return <FaAws className="h-7 w-7 text-orange-400" aria-hidden="true" />;
+    if (icon === 'nasa')
+        return (
+            <Image
+                src="/Nasa.png"
+                alt=""
+                width={28}
+                height={28}
+                unoptimized
+                className="h-7 w-7 object-contain"
+            />
+        );
+    return <FaGraduationCap className="h-7 w-7 text-accent" aria-hidden="true" />;
+};
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -115,11 +145,7 @@ export default async function Credentials({ params }: Props) {
                         <div>
                             <div className="flex items-start justify-between gap-4">
                                 <div className="shrink-0 rounded-md border border-line bg-ink p-2">
-                                    {item.isAws ? (
-                                        <FaAws className="h-7 w-7 text-orange-400" aria-hidden="true" />
-                                    ) : (
-                                        <FaGraduationCap className="h-7 w-7 text-accent" aria-hidden="true" />
-                                    )}
+                                    <CredentialIcon icon={item.icon} />
                                 </div>
                                 <span className="shrink-0 rounded-full border border-accent/20 bg-accent/10 px-2.5 py-0.5 font-mono text-xs text-accent">
                                     {formatDate(item.completed)}
@@ -130,7 +156,7 @@ export default async function Credentials({ params }: Props) {
                                 {item.title}
                             </h2>
 
-                            <p className="mt-1 text-xs text-muted">{t(`types.${item.type}`)}</p>
+                            <p className="mt-1 text-xs text-muted">{(`types.${item.type}`)}</p>
 
                             <p className="mt-1.5 text-xs text-muted">
                                 {t('issuedBy')}: <span className="text-soft">{item.issuer}</span>
