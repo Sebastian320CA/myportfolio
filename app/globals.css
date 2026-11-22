@@ -1,1 +1,46 @@
 @import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+
+  --color-ink: #0a0c0f;
+  --color-panel: #101318;
+  --color-line: #1f252d;
+  --color-muted: #8a94a3;
+  --color-soft: #c3cad5;
+  --color-accent: #4ade80;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ink);
+  color: #e8ecf1;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Faint grid used behind the hero. */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at top, black 30%, transparent 75%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
