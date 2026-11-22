@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
+import { SITE } from "@/lib/site";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import "../globals.css";
@@ -30,11 +31,20 @@ export async function generateMetadata({
     const t = await getTranslations({ locale, namespace: "meta" });
 
     return {
+        metadataBase: new URL(SITE.url),
         title: t("title"),
         description: t("description"),
         alternates: {
             languages: { en: "/", es: "/es" },
         },
+        openGraph: {
+            type: "website",
+            siteName: SITE.name,
+            title: t("title"),
+            description: t("description"),
+            locale: locale === "es" ? "es_CO" : "en_US",
+        },
+        twitter: { card: "summary_large_image" },
     };
 }
 
