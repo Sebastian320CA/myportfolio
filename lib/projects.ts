@@ -21,14 +21,14 @@ export const PROJECTS: Project[] = [
     {
         id: "scanner",
         youtubeId: "Dhu3PyfF8_c",
-        // TODO: add repoUrl once the team repository is known.
+        repoUrl: "https://github.com/daimersonAvila/vuInscope",
         tech: [
             { key: "python" },
+            { key: "flask" },
             { key: "hexagonal" },
-            { key: "docker" },
-            { key: "github" },
-            { key: "mysql" },
             { key: "jwt" },
+            { key: "sqlite" },
+            { key: "docker" },
         ],
     },
     {
