@@ -6,13 +6,8 @@ export interface Project {
     id: ProjectId;
     tech: TechRef[];
     repoUrl?: string;
-    /**
-     * Preferred: the YouTube video ID (unlisted is fine). When set, the project
-     * embeds YouTube and the local file is no longer needed.
-     */
+    /** YouTube video ID (unlisted is fine). The demo is embedded lazily. */
     youtubeId?: string;
-    /** Fallback while there is no YouTube ID. */
-    videoSrc?: string;
     /** Set to false only when the project has no public source code. */
     sourceAvailable?: boolean;
 }

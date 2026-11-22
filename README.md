@@ -23,7 +23,5 @@ For a lighter use of RAM, run `npm run build` and then `npm start`.
 
 ## Project videos
 
-Videos are heavy and should not live in the repo. In `lib/projects.ts`, set `youtubeId` on a
-project (an unlisted YouTube video works) and the page embeds it lazily. Once every project has a
-`youtubeId`, the `.mp4` files in `public/` and the `*.mp4` rule in `.gitattributes` can be removed.
-Until then, the local file is used and is only downloaded when the visitor presses play.
+Videos live on YouTube, not in the repo. To add or change one, set `youtubeId` on the project in
+`lib/projects.ts`. An unlisted video works, and the page embeds it lazily.
