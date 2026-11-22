@@ -2,16 +2,20 @@ import type { IconType } from "react-icons";
 import {
     FaDesktop,
     FaDocker,
+    FaGithub,
     FaJava,
     FaLeaf,
     FaLinux,
     FaLock,
+    FaProjectDiagram,
     FaPython,
 } from "react-icons/fa";
 import {
     SiApachemaven,
     SiGradle,
+    SiJsonwebtokens,
     SiMariadb,
+    SiMysql,
     SiNextdotjs,
     SiNodedotjs,
     SiPostgresql,
@@ -43,6 +47,10 @@ export const TECH = {
     typescript: { name: "TypeScript", Icon: SiTypescript, color: "text-blue-400" },
     vscode: { name: "VS Code", Icon: VscCode, color: "text-sky-400" },
     linux: { name: "Linux", Icon: FaLinux, color: "text-yellow-200" },
+    mysql: { name: "MySQL", Icon: SiMysql, color: "text-sky-400" },
+    jwt: { name: "JWT", Icon: SiJsonwebtokens, color: "text-pink-400" },
+    github: { name: "GitHub", Icon: FaGithub, color: "text-white" },
+    hexagonal: { name: "Hexagonal Architecture", Icon: FaProjectDiagram, color: "text-accent" },
     python: { name: "Python", Icon: FaPython, color: "text-yellow-400" },
     nextjs: { name: "Next.js", Icon: SiNextdotjs, color: "text-white" },
 } satisfies Record<string, { name: string; Icon: IconType; color: string }>;

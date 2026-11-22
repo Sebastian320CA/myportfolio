@@ -69,11 +69,11 @@ export default async function Projects({ params }: Props) {
                                             <FaGithub className="h-4 w-4" aria-hidden="true" />
                                             {t("repo")}
                                         </a>
-                                    ) : (
+                                    ) : project.sourceAvailable === false ? (
                                         <span className="inline-block rounded-md border border-line px-3 py-2 text-xs italic text-muted">
                                             {t("videoOnly")}
                                         </span>
-                                    )}
+                                    ) : null}
                                 </div>
                             </div>
                         </article>

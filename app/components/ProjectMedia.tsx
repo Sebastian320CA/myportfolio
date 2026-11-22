@@ -4,7 +4,8 @@ import type { Project } from "@/lib/projects";
  * Shows the project demo. Prefers a YouTube embed (lazy, no weight in the repo)
  * and falls back to a local video that is NOT downloaded until the user presses play.
  */
-const ProjectMedia = ({ project, title }: { project: Project; title: string }) => (
+const ProjectMedia = ({ project, title }: { project: Project; title: string }) =>
+    !project.youtubeId && !project.videoSrc ? null : (
     <div className="relative aspect-video w-full overflow-hidden bg-black">
         {project.youtubeId ? (
             <iframe

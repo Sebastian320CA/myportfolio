@@ -82,6 +82,11 @@
     "videoOnly": "Solo video de demostración (código fuente no disponible)",
     "videoTitle": "Video de demostración: {title}",
     "items": {
+      "scanner": {
+        "kind": "Backend · Proyecto en equipo",
+        "title": "Escáner de Vulnerabilidades de Proyectos",
+        "description": "Plataforma web donde subes tu proyecto como archivo .zip (hasta 25 MB) y analiza el código para entregarte un reporte de seguridad. Funciona como SonarQube, pero más simple, más intuitivo y desde el navegador. Construida con arquitectura hexagonal, autenticación JWT y MySQL, y empaquetada con Docker."
+      },
       "hospitalService": {
         "kind": "Full-Stack · Proyecto académico",
         "title": "SIGEBEX Hospital Service (Synexis)",

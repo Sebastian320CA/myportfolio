@@ -82,6 +82,11 @@
     "videoOnly": "Video demonstration only (source code unavailable)",
     "videoTitle": "Demo video: {title}",
     "items": {
+      "scanner": {
+        "kind": "Backend · Team Project",
+        "title": "Project Vulnerability Scanner",
+        "description": "Web platform where you upload a project as a .zip file (up to 25 MB) and it scans the code and returns a security report. It works like SonarQube, but simpler, more intuitive and used straight from the browser. Built with a hexagonal architecture, JWT authentication and MySQL, and packaged with Docker."
+      },
       "hospitalService": {
         "kind": "Full-Stack · Academic Project",
         "title": "SIGEBEX Hospital Service (Synexis)",

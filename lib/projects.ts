@@ -1,6 +1,6 @@
 import type { TechRef } from "./tech";
 
-export type ProjectId = "hospitalService" | "monitor" | "ecogrow" | "voting";
+export type ProjectId = "scanner" | "hospitalService" | "monitor" | "ecogrow" | "voting";
 
 export interface Project {
     id: ProjectId;
@@ -12,30 +12,47 @@ export interface Project {
      */
     youtubeId?: string;
     /** Fallback while there is no YouTube ID. */
-    videoSrc: string;
+    videoSrc?: string;
+    /** Set to false only when the project has no public source code. */
+    sourceAvailable?: boolean;
 }
 
 export const PROJECTS: Project[] = [
     {
+        id: "scanner",
+        youtubeId: "Dhu3PyfF8_c",
+        // TODO: add repoUrl once the team repository is known.
+        tech: [
+            { key: "python" },
+            { key: "hexagonal" },
+            { key: "docker" },
+            { key: "github" },
+            { key: "mysql" },
+            { key: "jwt" },
+        ],
+    },
+    {
         id: "hospitalService",
-        videoSrc: "/ServiceHospital.mp4",
+        youtubeId: "6_CX0HyXV6Y",
         repoUrl: "https://github.com/Sebastian320CA/hospital-service",
         tech: [
-            { key: "java" },
+            { key: "java", label: "Java 17" },
             { key: "springBoot" },
             { key: "springSecurity" },
             { key: "thymeleaf" },
             { key: "postgres" },
             { key: "docker" },
+            { key: "maven" },
         ],
     },
     {
         id: "monitor",
-        videoSrc: "/ServiciosFinal.mp4",
+        youtubeId: "HlBAvJlrCWk",
         repoUrl: "https://github.com/Sebastian320CA/san_rafael",
         tech: [
             { key: "java", label: "Java 21" },
             { key: "springBoot" },
+            { key: "thymeleaf" },
             { key: "postgres", label: "PostgreSQL 16" },
             { key: "docker" },
             { key: "gradle" },
@@ -44,7 +61,7 @@ export const PROJECTS: Project[] = [
     },
     {
         id: "ecogrow",
-        videoSrc: "/EcoGrow.mp4",
+        youtubeId: "eCQvv3YDWVc",
         repoUrl: "https://github.com/Sebastian320CA/areas-de-vida",
         tech: [
             { key: "java", label: "Java 25" },
@@ -57,7 +74,8 @@ export const PROJECTS: Project[] = [
     },
     {
         id: "voting",
-        videoSrc: "/VotingSystem.mp4",
+        youtubeId: "xL7WxB5KAAo",
+        sourceAvailable: false,
         tech: [
             { key: "react" },
             { key: "node" },
