@@ -145,7 +145,7 @@ const Page = () => {
                                 LinkedIn
                             </a>
                             <a
-                                href="/CV_Sebastian_Cetina_EN.docx"
+                                href="/CVResumeSebastianCetina.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={secondaryButton}
@@ -154,7 +154,7 @@ const Page = () => {
                                 CV (English)
                             </a>
                             <a
-                                href="/CV_Sebastian_Cetina_ES.docx"
+                                href="/CVHojaSebastianCetina.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={secondaryButton}
