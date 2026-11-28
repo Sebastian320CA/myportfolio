@@ -6,8 +6,6 @@ export interface Project {
     id: ProjectId;
     tech: TechRef[];
     repoUrl?: string;
-    /** Public deployed site, if any. */
-    liveUrl?: string;
     /** YouTube video ID (unlisted is fine). The demo is embedded lazily. */
     youtubeId?: string;
     /** Set to false only when the project has no public source code. */
@@ -19,7 +17,6 @@ export const PROJECTS: Project[] = [
         id: "scanner",
         youtubeId: "Dhu3PyfF8_c",
         repoUrl: "https://github.com/daimersonAvila/vuInscope",
-        liveUrl: "https://vuinscope.onrender.com/app",
         tech: [
             { key: "python" },
             { key: "flask" },
