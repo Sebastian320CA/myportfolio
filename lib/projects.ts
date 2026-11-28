@@ -19,7 +19,7 @@ export const PROJECTS: Project[] = [
         id: "scanner",
         youtubeId: "Dhu3PyfF8_c",
         repoUrl: "https://github.com/daimersonAvila/vuInscope",
-        liveUrl: "https://vu-inscope-three.vercel.app",
+        liveUrl: "https://vuinscope.onrender.com/app",
         tech: [
             { key: "python" },
             { key: "flask" },
