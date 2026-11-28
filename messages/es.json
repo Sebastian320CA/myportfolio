@@ -79,6 +79,7 @@
     "title": "Algunas cosas que he construido",
     "intro": "Una selección de proyectos en los que he trabajado mientras aprendo y aplico conceptos de desarrollo backend y arquitectura de software.",
     "repo": "Repositorio en GitHub",
+    "live": "Visitar sitio web",
     "videoOnly": "Solo video de demostración (código fuente no disponible)",
     "videoTitle": "Video de demostración: {title}",
     "items": {

@@ -1,5 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { FaGithub } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { PROJECTS } from "@/lib/projects";
 import ProjectMedia from "../../components/ProjectMedia";
 import SectionHeading from "../../components/SectionHeading";
@@ -58,7 +58,18 @@ export default async function Projects({ params }: Props) {
                                     ))}
                                 </ul>
 
-                                <div className="mt-6">
+                                <div className="mt-6 flex flex-wrap items-center gap-3">
+                                    {project.liveUrl ? (
+                                        <a
+                                            href={project.liveUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-2 rounded-md border border-accent px-4 py-2 text-sm font-semibold text-accent transition-opacity hover:opacity-90"
+                                        >
+                                            <FaExternalLinkAlt className="h-3.5 w-3.5" aria-hidden="true" />
+                                            {t("live")}
+                                        </a>
+                                    ) : null}
                                     {project.repoUrl ? (
                                         <a
                                             href={project.repoUrl}
